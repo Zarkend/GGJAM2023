@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2262626912618887717, guid: a43f4f7966c83bd48b33bf927c3ad967, type: 3}
       propertyPath: m_Name
-      value: FullRock_Left 1
+      value: FullRock_Left
       objectReference: {fileID: 0}
     - target: {fileID: 2262626912618887719, guid: a43f4f7966c83bd48b33bf927c3ad967, type: 3}
       propertyPath: m_Enabled
@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2262626912618887721, guid: a43f4f7966c83bd48b33bf927c3ad967, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.455
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 2262626912618887721, guid: a43f4f7966c83bd48b33bf927c3ad967, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2262626912618887721, guid: a43f4f7966c83bd48b33bf927c3ad967, type: 3}
       propertyPath: m_LocalPosition.z

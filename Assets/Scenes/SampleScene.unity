@@ -1188,6 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionPrefabs:
+  - {fileID: 4130162719531683028, guid: de4c23dbe25e46f478a85912f665c95d, type: 3}
   - {fileID: 994136599295103447, guid: 49d4ef9f4a3686b45a9c6ba74e082e62, type: 3}
   - {fileID: 7747581504627252418, guid: 87e1c5842bff1ac4d958b2f008b38ed9, type: 3}
   initialSections: 5
