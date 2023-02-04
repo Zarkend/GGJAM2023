@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 8015820853570948220}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8015820852619652005
 MeshFilter:
@@ -100,37 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4163a55993cf674fa4252f07a712073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Left:
-    m_Name: Left
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0144c913-bc7d-4569-af2c-c48c356fc953
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7c346847-c213-4a14-b610-b07704799203
-      m_Path: <DualShockGamepad>/leftStick/left
-      m_Interactions: Hold
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 59348177-0095-4334-9ec1-117645b7b88d
-      m_Path: <Keyboard>/a
-      m_Interactions: Hold
-      m_Processors: 
-      m_Groups: 
-      m_Action: Left
-      m_Flags: 0
-    m_Flags: 0
   verticalMoveSpeed: 35
   horizontalMoveSpeed: 55
   jumpHeight: 4
   jumpDuration: 0.3
   jumpEase: 3
-  gamePadIndex: 0
+  useGamePad: 0
   gravityValue: 55
 --- !u!143 &8015820852619652009
 CharacterController:
