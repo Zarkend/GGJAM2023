@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
 
         float keyboardVerticalAxis = keyboardUp + keyboardDown;
 
-        horizontalAxis = useGamePad ? _gamePad.leftStick.ReadValue().x : keyboardHorizontalAxis;
-        verticalAxis = useGamePad ? _gamePad.leftStick.ReadValue().y : keyboardVerticalAxis;
+        horizontalAxis = useGamePad && _gamePad != null ? _gamePad.leftStick.ReadValue().x : keyboardHorizontalAxis;
+        verticalAxis = useGamePad && _gamePad != null ? _gamePad.leftStick.ReadValue().y : keyboardVerticalAxis;
 
         CustomMovement();
     }
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.forward = move;
         }
 
-        bool jumpPressed = useGamePad ? _gamePad.aButton.isPressed : Keyboard.current.spaceKey.isPressed;
+        bool jumpPressed = useGamePad && _gamePad != null ? _gamePad.aButton.isPressed : Keyboard.current.spaceKey.isPressed;
 
         // allow jump as long as the player is on the ground
         if (jumpPressed)
