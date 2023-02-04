@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -133,5 +134,20 @@ public class PlayerController : MonoBehaviour
     private void OnJumpCompleted()
     {
         _isJumping = false;
+    }
+
+    private List<IInteractable> _interactables = new List<IInteractable>();
+
+    private void OnTriggerEnter(Collider other)
+    {
+        IInteractable interactable = other.GetComponent<IInteractable>();
+
+        if (interactable is not null)
+        {
+            if (_interactables.Contains(interactable))
+                return;
+
+            _interactables.Add(interactable);
+        }
     }
 }
