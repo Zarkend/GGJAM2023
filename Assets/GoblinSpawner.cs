@@ -13,9 +13,6 @@ public class GoblinSpawner : MonoBehaviour
     [SerializeField]
     private int spawnDelayAtStart;
 
-    [SerializeField]
-    private int spawnDelayInSeconds;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +36,7 @@ public class GoblinSpawner : MonoBehaviour
 
             goblin.transform.position = transform.position;
 
-            yield return new WaitForSeconds(spawnDelayInSeconds);
+            yield return new WaitForSeconds(Random.Range(1, 5));
         }
     }
 }

@@ -65,7 +65,7 @@ public class Section : MonoBehaviour
 
         Obstacle obstacle = Instantiate(objectPrefab, spawnPosition);
 
-        obstacle.transform.localEulerAngles = Vector3.zero;
+        //obstacle.transform.localEulerAngles = Vector3.zero;
     }
 
     public void Disable()

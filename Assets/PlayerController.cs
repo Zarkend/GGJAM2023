@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Interact pressed");
             _interactables.FirstOrDefault()?.Interact();
+
+            //_interactables.ForEach(x => x.Interact());
         }
 
     }
@@ -162,6 +164,18 @@ public class PlayerController : MonoBehaviour
             _interactables.Add(interactable);
 
             interactable.Destroyed += OnInteractableDestroyed;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IInteractable interactable = other.GetComponent<IInteractable>();
+
+        if (interactable is not null)
+        {
+            if (!_interactables.Contains(interactable))
+                return;
+            _interactables.Remove(interactable);
         }
     }
 
