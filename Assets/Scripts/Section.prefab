@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967349139812850313}
   m_Layer: 0
-  m_Name: center
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606350693130751799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0.525, z: 0}
+  m_LocalPosition: {x: 0.17, y: 0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -114,6 +114,10 @@ MonoBehaviour:
   spawnPositions:
   - {fileID: 4912660627246585289}
   - {fileID: 7231205280412384911}
+  - {fileID: 967349139812850313}
+  spawnPositionLeft: {fileID: 7231205280412384911}
+  spawnPositionRight: {fileID: 4912660627246585289}
+  spawnPositionCenter: {fileID: 967349139812850313}
   depthSize: 19.5
 --- !u!54 &-3678922022803660908
 Rigidbody:

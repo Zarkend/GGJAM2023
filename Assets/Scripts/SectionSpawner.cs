@@ -1,8 +1,17 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Random = System.Random;
+
+public enum ObstaclePosition
+{
+    Random,
+    Left,
+    Right,
+    Center
+}
 
 public class SectionSpawner : MonoBehaviour
 {
@@ -13,7 +22,7 @@ public class SectionSpawner : MonoBehaviour
     private int initialSections;
 
     [SerializeField]
-    private List<Transform> obstacles = new List<Transform>();
+    private List<Obstacle> obstacles;
 
     private Queue<Section> sectionQueue;
 
@@ -37,17 +46,20 @@ public class SectionSpawner : MonoBehaviour
     {
         for (int i = 0; i < initialSections; i++)
         {
-            SpawnSection();
+            SpawnSection(false);
         }
     }
 
-    private void SpawnSection()
+    private void SpawnSection(bool spawnObstacle = true)
     {
         float spawnPositionZ = sectionQueue.Any() ? sectionPrefab.DepthSize + sectionQueue.Last().transform.position.z : sectionPrefab.DepthSize;
 
         Section instance = Instantiate(sectionPrefab, new Vector3(0, sectionPrefab.transform.position.y, spawnPositionZ), Quaternion.identity);
 
-        instance.AddObstacle(GetRandomElement(obstacles));
+        if (spawnObstacle)
+        {
+            instance.AddObstacle(GetRandomElement(obstacles));
+        }
 
         instance.Disabled += OnSectionDisabled;
 

@@ -3,6 +3,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -62,6 +63,15 @@ public class PlayerController : MonoBehaviour
         verticalAxis = useGamePad && _gamePad != null ? _gamePad.leftStick.ReadValue().y : keyboardVerticalAxis;
 
         CustomMovement();
+
+        bool interactPressed = useGamePad && _gamePad != null ? _gamePad.bButton.wasPressedThisFrame : Mouse.current.leftButton.wasPressedThisFrame;
+
+        if (interactPressed)
+        {
+            Debug.Log("Interact pressed");
+            _interactables.FirstOrDefault()?.Interact();
+        }
+
     }
 
     private float groundedTimer;
@@ -142,12 +152,21 @@ public class PlayerController : MonoBehaviour
     {
         IInteractable interactable = other.GetComponent<IInteractable>();
 
+        Debug.Log($"Trigger ended {other.gameObject.name}");
+
         if (interactable is not null)
         {
             if (_interactables.Contains(interactable))
                 return;
-
+            Debug.Log("Interactable added");
             _interactables.Add(interactable);
+
+            interactable.Destroyed += OnInteractableDestroyed;
         }
+    }
+
+    private void OnInteractableDestroyed(IInteractable interactable)
+    {
+        _interactables.Remove(interactable);
     }
 }

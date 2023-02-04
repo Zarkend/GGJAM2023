@@ -8,6 +8,7 @@ namespace Assets.Scripts
 {
     public interface IInteractable
     {
+        public event Action<IInteractable> Destroyed;
         void Interact();
     }
 }
