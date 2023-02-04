@@ -16,7 +16,7 @@ public enum ObstaclePosition
 public class SectionSpawner : MonoBehaviour
 {
     [SerializeField]
-    private Section sectionPrefab;
+    private List<Section> sectionPrefabs;
 
     [SerializeField]
     private int initialSections;
@@ -52,6 +52,8 @@ public class SectionSpawner : MonoBehaviour
 
     private void SpawnSection(bool spawnObstacle = true)
     {
+        var sectionPrefab = GetRandomElement(sectionPrefabs);
+
         float spawnPositionZ = sectionQueue.Any() ? sectionPrefab.DepthSize + sectionQueue.Last().transform.position.z : sectionPrefab.DepthSize;
 
         Section instance = Instantiate(sectionPrefab, new Vector3(0, sectionPrefab.transform.position.y, spawnPositionZ), Quaternion.identity);

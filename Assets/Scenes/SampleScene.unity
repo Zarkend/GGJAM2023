@@ -1187,7 +1187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ba89dc48cb16a4188e24bbdfccc704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionPrefab: {fileID: 4130162719531683028, guid: de4c23dbe25e46f478a85912f665c95d, type: 3}
+  sectionPrefabs:
+  - {fileID: 994136599295103447, guid: 49d4ef9f4a3686b45a9c6ba74e082e62, type: 3}
+  - {fileID: 7747581504627252418, guid: 87e1c5842bff1ac4d958b2f008b38ed9, type: 3}
   initialSections: 5
   obstacles:
   - {fileID: 7009452244485517513, guid: 99f67ec0b7fdee64e9529a041df505a8, type: 3}
