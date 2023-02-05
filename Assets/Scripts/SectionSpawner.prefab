@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8546381179999432536
 MonoBehaviour:
@@ -48,6 +48,15 @@ MonoBehaviour:
   - {fileID: 4130162719531683028, guid: de4c23dbe25e46f478a85912f665c95d, type: 3}
   - {fileID: 994136599295103447, guid: 49d4ef9f4a3686b45a9c6ba74e082e62, type: 3}
   - {fileID: 7747581504627252418, guid: 87e1c5842bff1ac4d958b2f008b38ed9, type: 3}
+  - {fileID: 1314455957588285911, guid: 0901202456434344daf82207a761e110, type: 3}
+  - {fileID: 6429385380240387964, guid: f51e4539495eb204aae3b5808e3d649f, type: 3}
+  - {fileID: 6429385380240387964, guid: dd5259a75d9686f4e8f2b15d226f7e56, type: 3}
+  - {fileID: 6429385380240387964, guid: 8ef0a40176a17be459d29623e52e71f2, type: 3}
+  - {fileID: 6429385380240387964, guid: 77ba6a4be4841be43b99661e0f8127ff, type: 3}
+  - {fileID: 6429385380240387964, guid: 16ac0f29f2a0c144ea6b20bd75070eb6, type: 3}
+  - {fileID: 6429385380240387964, guid: 2616b2e8d260caa419592342b17afa1d, type: 3}
+  - {fileID: 6429385380240387964, guid: bf8b50f18a22eb34c87016c700ac68a0, type: 3}
+  - {fileID: 6429385380240387964, guid: 6d4bcc385edf2374a8e227018bde14ed, type: 3}
   initialSections: 5
   obstacles:
   - {fileID: 7009452244485517513, guid: 99f67ec0b7fdee64e9529a041df505a8, type: 3}
