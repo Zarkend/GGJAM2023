@@ -21,17 +21,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpDuration;
 
-    [SerializeField]
-    private Ease jumpEase;
-
-    private bool _isJumping;
-
     private CharacterController _characterController;
 
     private Gamepad _gamePad;
 
     [SerializeField]
     private bool useGamePad;
+
+    [SerializeField]
+    private Animator animator;
 
     private void Awake()
     {
@@ -70,9 +68,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Interact pressed");
             _interactables.FirstOrDefault()?.Interact();
-
+            animator.SetTrigger("Hit");
             //_interactables.ForEach(x => x.Interact());
         }
+
+        animator.SetBool("IsJumping", !_characterController.isGrounded);
 
     }
 
@@ -141,11 +141,8 @@ public class PlayerController : MonoBehaviour
 
         // call .Move() once only
         _characterController.Move(move * Time.deltaTime);
-    }
 
-    private void OnJumpCompleted()
-    {
-        _isJumping = false;
+        animator.SetBool("IsWalking", move != Vector3.zero);
     }
 
     private List<IInteractable> _interactables = new List<IInteractable>();
