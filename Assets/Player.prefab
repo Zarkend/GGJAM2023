@@ -4930,7 +4930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalMoveSpeed: 35
-  horizontalMoveSpeed: 55
+  horizontalMoveSpeed: 35
   jumpHeight: 4
   jumpDuration: 0.3
   useGamePad: 0
@@ -4939,6 +4939,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 0}
   wallHitSound: {fileID: 8300000, guid: 5ac71fae9794e9e4fb1da7e8fd3df81d, type: 3}
   goblinHitSound: {fileID: 8300000, guid: 9e30d38edfd0f854a9c1d1c938f5bb41, type: 3}
+  coinClip: {fileID: 8300000, guid: ea91afbfa12826d42a9098f5907434ce, type: 3}
   gravityValue: 55
 --- !u!143 &8015820852619652009
 CharacterController:
@@ -5061,6 +5062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdc3e9a98323834793615e5f495e457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  right: 1
 --- !u!1001 &2912343174163443292
 PrefabInstance:
   m_ObjectHideFlags: 0

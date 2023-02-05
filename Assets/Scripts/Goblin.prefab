@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdc3e9a98323834793615e5f495e457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  right: 1
 --- !u!1 &6640963735096655877
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04debde8828ea0a49b8800b07125e857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hits: 5
+  hits: 3
   nameplatePrefab: {fileID: 7467030919579363807, guid: 8a25874bcd796014d8da48b9ecdc9ab8, type: 3}
   nameplatePosition: {fileID: 663128982486016862}
   MoveDirection: 0

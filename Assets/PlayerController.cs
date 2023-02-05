@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private AudioClip goblinHitSound;
 
+    [SerializeField]
+    private AudioClip coinClip;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -176,6 +179,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            Score.ScoreNumber += 100;
+            GameObject.Find("SFXAudioSource").GetComponent<AudioSource>().PlayOneShot(coinClip);
+            return;
+        }
+
         IInteractable interactable = other.GetComponent<IInteractable>();
 
         Debug.Log($"Trigger ended {other.gameObject.name}");

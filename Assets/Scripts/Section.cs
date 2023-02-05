@@ -10,6 +10,12 @@ public class Section : MonoBehaviour
     public event Action Disabled;
 
     [SerializeField]
+    private List<Transform> coinSpawnPoints;
+
+    [SerializeField]
+    private Transform coinPrefab;
+
+    [SerializeField]
     private List<Transform> spawnPositions;
 
     [SerializeField]
@@ -32,7 +38,12 @@ public class Section : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnCoin();
+    }
 
+    private void SpawnCoin()
+    {
+        var coin = Instantiate(coinPrefab, GetRandomElement(coinSpawnPoints));
     }
 
     // Update is called once per frame

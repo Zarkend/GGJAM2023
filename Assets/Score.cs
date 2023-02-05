@@ -13,6 +13,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         InvokeRepeating(nameof(IncreaseScore), 0, 0.5f);
+        ScoreNumber = 0;
     }
 
     // Update is called once per frame

@@ -281,7 +281,7 @@ MonoBehaviour:
   nameplatePrefab: {fileID: 7467030919579363807, guid: 8a25874bcd796014d8da48b9ecdc9ab8, type: 3}
   nameplatePosition: {fileID: 8048388545762047982}
   destroyParticle: {fileID: 5887061777448104080, guid: 4e690d9c609cbcf4c9ab6da3994847d8, type: 3}
-  damage: 30
+  damage: 20
 --- !u!54 &2860317523469680178
 Rigidbody:
   m_ObjectHideFlags: 0
