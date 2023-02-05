@@ -30,7 +30,16 @@ public class Goblin : MonoBehaviour, IInteractable
     private float moveSpeed;
 
     private bool _isMoving = true;
-    private bool _isAttacking;
+    private bool _isAttacking = false;
+
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private AudioClip deadClip;
+
+    [SerializeField]
+    private AudioClip carretillaHit;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +52,9 @@ public class Goblin : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
+        if (_isAttacking)
+            return;
+
         _nameplateInstance.transform.position = Camera.main.WorldToScreenPoint(nameplatePosition.transform.position);
 
         if (_isMoving)
@@ -58,6 +70,15 @@ public class Goblin : MonoBehaviour, IInteractable
 
         }
 
+        animator.SetBool("isMoving", _isMoving);
+
+    }
+
+    private void Attack()
+    {
+        GameObject.Find("SFXAudioSource").GetComponent<AudioSource>().PlayOneShot(carretillaHit);
+
+        _carretilla.Attack(1);
     }
 
     public void Interact()
@@ -70,10 +91,14 @@ public class Goblin : MonoBehaviour, IInteractable
         {
             Destroyed?.Invoke(this);
 
+            GameObject.Find("SFXAudioSource").GetComponent<AudioSource>().PlayOneShot(deadClip);
+
             Destroy(_nameplateInstance.gameObject);
             Destroy(gameObject);
         }
     }
+
+    private Carretilla _carretilla;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -81,8 +106,12 @@ public class Goblin : MonoBehaviour, IInteractable
 
         if (carretilla != null)
         {
+            _carretilla = carretilla;
             _isMoving = false;
             _isAttacking = true;
+
+            animator.SetBool("isHitting", true);
+            InvokeRepeating(nameof(Attack), 1f, 1f);
         }
     }
 }

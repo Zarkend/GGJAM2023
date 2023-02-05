@@ -31,6 +31,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private ParticleSystem wallHitParticleSystem;
+
+    [SerializeField]
+    private AudioSource sfxAudioSource;
+
+    [SerializeField]
+    private AudioClip wallHitSound;
+
+    [SerializeField]
+    private AudioClip goblinHitSound;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -67,8 +79,23 @@ public class PlayerController : MonoBehaviour
         if (interactPressed)
         {
             Debug.Log("Interact pressed");
-            _interactables.FirstOrDefault()?.Interact();
+
+            var interactable = _interactables.FirstOrDefault();
+
+            interactable?.Interact();
             animator.SetTrigger("Hit");
+
+            if (interactable is Wall)
+            {
+                sfxAudioSource.PlayOneShot(wallHitSound);
+                wallHitParticleSystem.Play();
+            }
+
+            if (interactable is Goblin)
+            {
+                sfxAudioSource.PlayOneShot(goblinHitSound);
+            }
+
             //_interactables.ForEach(x => x.Interact());
         }
 

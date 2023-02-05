@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,20 @@ namespace Assets.Scripts
                 Destroyed?.Invoke(this);
 
                 Destroy(_nameplateInstance.gameObject);
+                Destroy(gameObject);
+            }
+        }
+
+        [SerializeField]
+        private int damage;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            var carretilla = other.GetComponent<Carretilla>();
+
+            if (carretilla != null)
+            {
+                carretilla.Attack(damage);
                 Destroy(gameObject);
             }
         }
