@@ -1912,6 +1912,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b39bd25557abe1140a08d393c2991e4a, type: 2}
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.21226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.75761265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6373435587181554309, guid: b39bd25557abe1140a08d393c2991e4a, type: 2}
+    - target: {fileID: 3002493098292731747, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281778687
+      objectReference: {fileID: 0}
     - target: {fileID: 3002493098313530600, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2000,6 +2024,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 3002493099191665577, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b39bd25557abe1140a08d393c2991e4a, type: 2}
+    - target: {fileID: 3002493099191665577, guid: 37b2cb9aeefe24747b90a5303f045c4c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6373435587181554309, guid: b39bd25557abe1140a08d393c2991e4a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

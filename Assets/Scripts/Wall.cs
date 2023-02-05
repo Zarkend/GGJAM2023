@@ -72,6 +72,9 @@ namespace Assets.Scripts
             if (carretilla != null)
             {
                 carretilla.Attack(damage);
+                var rumble = Instantiate(destroyParticle);
+                rumble.transform.position = transform.position;
+
                 Destroy(_nameplateInstance.gameObject);
                 Destroy(gameObject);
             }
