@@ -8,6 +8,9 @@ public enum MoveDirection
 {
     Left,
     Right,
+    LeftTop,
+    RightTop,
+    Top
 }
 public class Goblin : MonoBehaviour, IInteractable
 {
@@ -59,15 +62,32 @@ public class Goblin : MonoBehaviour, IInteractable
 
         if (_isMoving)
         {
-            if (MoveDirection == MoveDirection.Left)
+            Vector3 movement = Vector3.zero;
+
+            switch (MoveDirection)
             {
-                transform.position -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
-            }
-            else
-            {
-                transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                case MoveDirection.Left:
+                    movement -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                    break;
+                case MoveDirection.Right:
+                    movement += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                    break;
+                case MoveDirection.LeftTop:
+                    movement -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                    movement += new Vector3(0, 0, moveSpeed * Time.deltaTime);
+                    break;
+                case MoveDirection.RightTop:
+                    movement += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+                    movement += new Vector3(0, 0, moveSpeed * Time.deltaTime);
+                    break;
+                case MoveDirection.Top:
+                    movement += new Vector3(0, 0, moveSpeed * Time.deltaTime);
+                    break;
+                default:
+                    break;
             }
 
+            transform.position += movement;
         }
 
         animator.SetBool("isMoving", _isMoving);

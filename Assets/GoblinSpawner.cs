@@ -36,7 +36,7 @@ public class GoblinSpawner : MonoBehaviour
 
             goblin.transform.position = transform.position;
 
-            yield return new WaitForSeconds(Random.Range(1, 5));
+            yield return new WaitForSeconds(Random.Range(1, 10));
         }
     }
 }

@@ -12,11 +12,22 @@ namespace Assets.Scripts
     {
         Vector3 cameraDir;
 
+        [SerializeField]
+        bool right = true;
+
         private void LateUpdate()
         {
-            cameraDir = Camera.main.transform.forward;
-            cameraDir.y = 0;
 
+            if (right)
+            {
+                cameraDir = Camera.main.transform.forward;
+            }
+            else
+            {
+                cameraDir = Camera.main.transform.forward * -1;
+            }
+
+            cameraDir.y = 0;
             transform.rotation = Quaternion.LookRotation(cameraDir);
         }
     }
