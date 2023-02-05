@@ -4936,6 +4936,9 @@ MonoBehaviour:
   useGamePad: 0
   animator: {fileID: 5705105668375225943}
   wallHitParticleSystem: {fileID: 870312392833637493}
+  sfxAudioSource: {fileID: 0}
+  wallHitSound: {fileID: 8300000, guid: 5ac71fae9794e9e4fb1da7e8fd3df81d, type: 3}
+  goblinHitSound: {fileID: 8300000, guid: 9e30d38edfd0f854a9c1d1c938f5bb41, type: 3}
   gravityValue: 55
 --- !u!143 &8015820852619652009
 CharacterController:

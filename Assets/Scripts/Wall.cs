@@ -66,6 +66,7 @@ namespace Assets.Scripts
             if (carretilla != null)
             {
                 carretilla.Attack(damage);
+                Destroy(_nameplateInstance.gameObject);
                 Destroy(gameObject);
             }
         }

@@ -87,6 +87,9 @@ public class Goblin : MonoBehaviour, IInteractable
 
         _nameplateInstance.SetHealth(hits);
 
+        PaintRenderers(Color.red);
+        Invoke(nameof(ReturnToNormal), 0.1f);
+
         if (hits <= 0)
         {
             Destroyed?.Invoke(this);
@@ -96,6 +99,19 @@ public class Goblin : MonoBehaviour, IInteractable
             Destroy(_nameplateInstance.gameObject);
             Destroy(gameObject);
         }
+    }
+
+    void PaintRenderers(Color color)
+    {
+        foreach (var spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            spriteRenderer.color = color;
+        }
+    }
+
+    private void ReturnToNormal()
+    {
+        PaintRenderers(Color.white);
     }
 
     private Carretilla _carretilla;
