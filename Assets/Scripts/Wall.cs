@@ -22,6 +22,9 @@ namespace Assets.Scripts
         [SerializeField]
         private Transform nameplatePosition;
 
+        [SerializeField]
+        private GameObject destroyParticle;
+
         HealthBar _nameplateInstance;
 
         private void Awake()
@@ -50,6 +53,9 @@ namespace Assets.Scripts
             if (hits <= 0)
             {
                 Destroyed?.Invoke(this);
+
+                var rumble = Instantiate(destroyParticle);
+                rumble.transform.position = transform.position;
 
                 Destroy(_nameplateInstance.gameObject);
                 Destroy(gameObject);
